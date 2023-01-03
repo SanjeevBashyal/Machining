@@ -1,0 +1,12 @@
+Go to C:\Users\sande\AppData\Local\Programs\Python\Python311\Scripts
+
+Common commands:
+    antlr4 -Dlanguage=Python3 Sql.g4            //no_visitor
+    antlr4 -Dlanguage=Python3 Sql.g4 -visitor   //with_visitor
+    antlr4-parse Expr.g4 prog -tree
+
+Github
+in cloned folder
+git add .
+git commit -m "________"
+git push origin main

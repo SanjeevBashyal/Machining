@@ -1,0 +1,6 @@
+CREATE table Student (name : string, age : int);
+INSERT INTO Student("alice", 12);
+INSERT INTO Student("bob", 15);
+INSERT INTO Student("cindy", 16);
+SELECT age, name FROM Student
+WHERE name != "alice" OR age = 16;
