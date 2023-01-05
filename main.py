@@ -4,6 +4,7 @@ from antlr4 import *
 from SqlLexer import SqlLexer
 from SqlParser import SqlParser
 from SqlExecution import SqlExecution
+from CNC import CNC
 
 path=os.getcwd()
 
@@ -18,7 +19,8 @@ def main(argv):
     stream = CommonTokenStream(lexer)
     parser = SqlParser(stream)
     tree = parser.prog()
-    SqlExecution().visitProg(tree)
+    cnc=CNC()
+    SqlExecution(cnc).visitProg(tree)
 
 if __name__ == '__main__':
     main(sys.argv)

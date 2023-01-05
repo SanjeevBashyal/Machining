@@ -1,8 +1,10 @@
 OID=1
 NID=2
 GID=3
-ID=4
-INT=5
-STRING=6
+PID=4
+DOT=5
+NEG=6
 COMMENT=7
 WS=8
+'.'=5
+'-'=6
