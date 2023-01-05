@@ -1,4 +1,4 @@
-# Generated from Sql.g4 by ANTLR 4.11.1
+# Generated from Gcode.g4 by ANTLR 4.11.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -10,22 +10,21 @@ else:
 
 def serializedATN():
     return [
-        4,1,8,36,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,1,0,1,0,1,0,1,1,1,1,
-        5,1,15,8,1,10,1,12,1,18,9,1,1,2,1,2,3,2,22,8,2,1,3,5,3,25,8,3,10,
-        3,12,3,28,9,3,1,3,5,3,31,8,3,10,3,12,3,34,9,3,1,3,0,0,4,0,2,4,6,
-        0,0,35,0,8,1,0,0,0,2,16,1,0,0,0,4,21,1,0,0,0,6,26,1,0,0,0,8,9,5,
-        1,0,0,9,10,3,2,1,0,10,11,5,0,0,1,11,1,1,0,0,0,12,13,5,2,0,0,13,15,
-        3,4,2,0,14,12,1,0,0,0,15,18,1,0,0,0,16,14,1,0,0,0,16,17,1,0,0,0,
-        17,3,1,0,0,0,18,16,1,0,0,0,19,22,3,6,3,0,20,22,5,7,0,0,21,19,1,0,
-        0,0,21,20,1,0,0,0,22,5,1,0,0,0,23,25,5,3,0,0,24,23,1,0,0,0,25,28,
-        1,0,0,0,26,24,1,0,0,0,26,27,1,0,0,0,27,32,1,0,0,0,28,26,1,0,0,0,
-        29,31,5,4,0,0,30,29,1,0,0,0,31,34,1,0,0,0,32,30,1,0,0,0,32,33,1,
-        0,0,0,33,7,1,0,0,0,34,32,1,0,0,0,4,16,21,26,32
+        4,1,9,32,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,1,0,1,0,1,0,1,1,1,1,
+        5,1,15,8,1,10,1,12,1,18,9,1,1,2,1,2,3,2,22,8,2,1,2,3,2,25,8,2,1,
+        3,4,3,28,8,3,11,3,12,3,29,1,3,0,0,4,0,2,4,6,0,1,1,0,4,5,31,0,8,1,
+        0,0,0,2,16,1,0,0,0,4,21,1,0,0,0,6,27,1,0,0,0,8,9,5,2,0,0,9,10,3,
+        2,1,0,10,11,5,0,0,1,11,1,1,0,0,0,12,13,5,3,0,0,13,15,3,4,2,0,14,
+        12,1,0,0,0,15,18,1,0,0,0,16,14,1,0,0,0,16,17,1,0,0,0,17,3,1,0,0,
+        0,18,16,1,0,0,0,19,22,3,6,3,0,20,22,5,8,0,0,21,19,1,0,0,0,21,20,
+        1,0,0,0,22,24,1,0,0,0,23,25,5,1,0,0,24,23,1,0,0,0,24,25,1,0,0,0,
+        25,5,1,0,0,0,26,28,7,0,0,0,27,26,1,0,0,0,28,29,1,0,0,0,29,27,1,0,
+        0,0,29,30,1,0,0,0,30,7,1,0,0,0,4,16,21,24,29
     ]
 
-class SqlParser ( Parser ):
+class GcodeParser ( Parser ):
 
-    grammarFileName = "Sql.g4"
+    grammarFileName = "Gcode.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -33,11 +32,11 @@ class SqlParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+    literalNames = [ "<INVALID>", "';'", "<INVALID>", "<INVALID>", "<INVALID>", 
                      "<INVALID>", "'.'", "'-'" ]
 
-    symbolicNames = [ "<INVALID>", "OID", "NID", "GID", "PID", "DOT", "NEG", 
-                      "COMMENT", "WS" ]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "OID", "NID", "GID", "PID", 
+                      "DOT", "NEG", "COMMENT", "WS" ]
 
     RULE_prog = 0
     RULE_expr = 1
@@ -47,14 +46,15 @@ class SqlParser ( Parser ):
     ruleNames =  [ "prog", "expr", "stmt", "gstmt" ]
 
     EOF = Token.EOF
-    OID=1
-    NID=2
-    GID=3
-    PID=4
-    DOT=5
-    NEG=6
-    COMMENT=7
-    WS=8
+    T__0=1
+    OID=2
+    NID=3
+    GID=4
+    PID=5
+    DOT=6
+    NEG=7
+    COMMENT=8
+    WS=9
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -73,17 +73,17 @@ class SqlParser ( Parser ):
             self.parser = parser
 
         def OID(self):
-            return self.getToken(SqlParser.OID, 0)
+            return self.getToken(GcodeParser.OID, 0)
 
         def expr(self):
-            return self.getTypedRuleContext(SqlParser.ExprContext,0)
+            return self.getTypedRuleContext(GcodeParser.ExprContext,0)
 
 
         def EOF(self):
-            return self.getToken(SqlParser.EOF, 0)
+            return self.getToken(GcodeParser.EOF, 0)
 
         def getRuleIndex(self):
-            return SqlParser.RULE_prog
+            return GcodeParser.RULE_prog
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProg" ):
@@ -104,16 +104,16 @@ class SqlParser ( Parser ):
 
     def prog(self):
 
-        localctx = SqlParser.ProgContext(self, self._ctx, self.state)
+        localctx = GcodeParser.ProgContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_prog)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 8
-            self.match(SqlParser.OID)
+            self.match(GcodeParser.OID)
             self.state = 9
             self.expr()
             self.state = 10
-            self.match(SqlParser.EOF)
+            self.match(GcodeParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -132,19 +132,19 @@ class SqlParser ( Parser ):
 
         def NID(self, i:int=None):
             if i is None:
-                return self.getTokens(SqlParser.NID)
+                return self.getTokens(GcodeParser.NID)
             else:
-                return self.getToken(SqlParser.NID, i)
+                return self.getToken(GcodeParser.NID, i)
 
         def stmt(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(SqlParser.StmtContext)
+                return self.getTypedRuleContexts(GcodeParser.StmtContext)
             else:
-                return self.getTypedRuleContext(SqlParser.StmtContext,i)
+                return self.getTypedRuleContext(GcodeParser.StmtContext,i)
 
 
         def getRuleIndex(self):
-            return SqlParser.RULE_expr
+            return GcodeParser.RULE_expr
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExpr" ):
@@ -165,7 +165,7 @@ class SqlParser ( Parser ):
 
     def expr(self):
 
-        localctx = SqlParser.ExprContext(self, self._ctx, self.state)
+        localctx = GcodeParser.ExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_expr)
         self._la = 0 # Token type
         try:
@@ -173,9 +173,9 @@ class SqlParser ( Parser ):
             self.state = 16
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==2:
+            while _la==3:
                 self.state = 12
-                self.match(SqlParser.NID)
+                self.match(GcodeParser.NID)
                 self.state = 13
                 self.stmt()
                 self.state = 18
@@ -199,14 +199,14 @@ class SqlParser ( Parser ):
             self.parser = parser
 
         def gstmt(self):
-            return self.getTypedRuleContext(SqlParser.GstmtContext,0)
+            return self.getTypedRuleContext(GcodeParser.GstmtContext,0)
 
 
         def COMMENT(self):
-            return self.getToken(SqlParser.COMMENT, 0)
+            return self.getToken(GcodeParser.COMMENT, 0)
 
         def getRuleIndex(self):
-            return SqlParser.RULE_stmt
+            return GcodeParser.RULE_stmt
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterStmt" ):
@@ -227,24 +227,32 @@ class SqlParser ( Parser ):
 
     def stmt(self):
 
-        localctx = SqlParser.StmtContext(self, self._ctx, self.state)
+        localctx = GcodeParser.StmtContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_stmt)
+        self._la = 0 # Token type
         try:
+            self.enterOuterAlt(localctx, 1)
             self.state = 21
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [-1, 2, 3, 4]:
-                self.enterOuterAlt(localctx, 1)
+            if token in [4, 5]:
                 self.state = 19
                 self.gstmt()
                 pass
-            elif token in [7]:
-                self.enterOuterAlt(localctx, 2)
+            elif token in [8]:
                 self.state = 20
-                self.match(SqlParser.COMMENT)
+                self.match(GcodeParser.COMMENT)
                 pass
             else:
                 raise NoViableAltException(self)
+
+            self.state = 24
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la==1:
+                self.state = 23
+                self.match(GcodeParser.T__0)
+
 
         except RecognitionException as re:
             localctx.exception = re
@@ -264,18 +272,18 @@ class SqlParser ( Parser ):
 
         def GID(self, i:int=None):
             if i is None:
-                return self.getTokens(SqlParser.GID)
+                return self.getTokens(GcodeParser.GID)
             else:
-                return self.getToken(SqlParser.GID, i)
+                return self.getToken(GcodeParser.GID, i)
 
         def PID(self, i:int=None):
             if i is None:
-                return self.getTokens(SqlParser.PID)
+                return self.getTokens(GcodeParser.PID)
             else:
-                return self.getToken(SqlParser.PID, i)
+                return self.getToken(GcodeParser.PID, i)
 
         def getRuleIndex(self):
-            return SqlParser.RULE_gstmt
+            return GcodeParser.RULE_gstmt
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGstmt" ):
@@ -296,30 +304,27 @@ class SqlParser ( Parser ):
 
     def gstmt(self):
 
-        localctx = SqlParser.GstmtContext(self, self._ctx, self.state)
+        localctx = GcodeParser.GstmtContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_gstmt)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 26
+            self.state = 27 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while _la==3:
-                self.state = 23
-                self.match(SqlParser.GID)
-                self.state = 28
+            while True:
+                self.state = 26
+                _la = self._input.LA(1)
+                if not(_la==4 or _la==5):
+                    self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
+                self.state = 29 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-
-            self.state = 32
-            self._errHandler.sync(self)
-            _la = self._input.LA(1)
-            while _la==4:
-                self.state = 29
-                self.match(SqlParser.PID)
-                self.state = 34
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
+                if not (_la==4 or _la==5):
+                    break
 
         except RecognitionException as re:
             localctx.exception = re

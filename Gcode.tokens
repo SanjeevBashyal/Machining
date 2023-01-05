@@ -1,0 +1,12 @@
+T__0=1
+OID=2
+NID=3
+GID=4
+PID=5
+DOT=6
+NEG=7
+COMMENT=8
+WS=9
+';'=1
+'.'=6
+'-'=7

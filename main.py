@@ -1,9 +1,9 @@
 import sys
 import os
 from antlr4 import *
-from SqlLexer import SqlLexer
-from SqlParser import SqlParser
-from SqlExecution import SqlExecution
+from GcodeLexer import GcodeLexer
+from GcodeParser import GcodeParser
+from GcodeExecution import GcodeExecution
 from CNC import CNC
 
 path=os.getcwd()
@@ -15,12 +15,12 @@ def readInputFile(filename):
 
 def main(argv):
     input = InputStream(readInputFile(os.path.join(path,'code.txt')))
-    lexer = SqlLexer(input)
+    lexer = GcodeLexer(input)
     stream = CommonTokenStream(lexer)
-    parser = SqlParser(stream)
+    parser = GcodeParser(stream)
     tree = parser.prog()
     cnc=CNC()
-    SqlExecution(cnc).visitProg(tree)
+    GcodeExecution(cnc).visitProg(tree)
 
 if __name__ == '__main__':
     main(sys.argv)
