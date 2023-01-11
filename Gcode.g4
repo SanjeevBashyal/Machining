@@ -8,8 +8,8 @@ gstmt: (GID | PID)+;
 
 OID: 'O'[0-9]+;
 NID: 'N'[0-9]+;
-GID: [GTMHD][0-9]+;
-PID: [FSPQXYZRIJK] (NEG)? [0-9]* (DOT)? [0-9]*;
+GID: [GTM][0-9]+;
+PID: [HDFSPQXYZRIJK] (NEG)? [0-9]* (DOT)? [0-9]*;
 
 DOT: '.';
 NEG: '-';
